@@ -8,678 +8,723 @@
 // Väärteomenetluse küsimused 1–60
 // JS quiz array
 
-const QUESTIONS = [
-  {
-    id: 1,
-    text: "Mis on väärtegu?",
-    options: [
-      "Väärtegu on käesolevas seadustikus või muus seaduses sätestatud süütegu, mille eest on ette nähtud rahatrahv, arest või sõiduki juhtimise õiguse äravõtmine",
-      "Kuritegu, mille eest karistatakse vangistusega",
-      "Tsiviilõiguslik rikkumine",
-      "Distsiplinaarrikkumine töökohal"
-    ],
-    correct: [0]
-  },
-  {
-    id: 2,
-    text: "Nimetage väärteomenetluse menetlusliigid",
-    options: [
-      "Kiirmenetlus",
-      "Kirjalik hoiatusmenetlus",
-      "Lühimenetlus",
-      "Üldmenetlus",
-      "Haldusmenetlus",
-      "Kriminaalmenetlus"
-    ],
-    correct: [0, 1, 2, 3]
-  },
-  {
-    id: 3,
-    text: "Kui väärteomenetluse seadustikus ei ole sätestatud menetlustoimingut, tuleb kohaldada",
-    options: [
-      "Kriminaalmenetluse sätteid arvestades väärteomenetluse erisusi",
-      "Tsiviilkohtumenetluse sätteid",
-      "Halduskohtumenetluse sätteid",
-      "Politsei sisekorra eeskirju"
-    ],
-    correct: [0]
-  },
-  {
-    id: 4,
-    text: "Mida tähendab väärteomenetluse kohustuslikkuse printsiip?",
-    options: [
-      "Väärteotunnuste ilmnemisel tuleb menetlus alustada ja läbi viia, kui puuduvad välistavad asjaolud",
-      "Menetlust alustatakse ainult kaebuse alusel",
-      "Politsei võib alati menetluse lõpetada ilma põhjuseta",
-      "Väärteomenetlus on vabatahtlik"
-    ],
-    correct: [0]
-  },
-  {
-    id: 5,
-    text: "Väärtegu ei ole vähetähtis, kui VTMS § 3 lg 4",
-    options: [
-      "On tekitatud kahju",
-      "Kahju on vabatahtlikult hüvitatud",
-      "Väärtegu on toime pandud kogemata",
-      "Menetleja leiab, et tegu on vähetähtis"
-    ],
-    correct: [0]
-  },
-  {
-    id: 6,
-    text: "Mida tähendab süütuse presumptsioon väärteomenetluses?",
-    options: [
-      "Isikut ei loeta süüdlaseks enne jõustunud otsust",
-      "Isikut loetakse süüdlaseks kohe pärast väärteoteadet",
-      "Politsei otsus on lõplik süü tuvastamisel",
-      "Kahtluse korral loetakse isik süüdi"
-    ],
-    correct: [0]
-  },
-  {
-    id: 7,
-    text: "Kuidas lahendatakse väärteoga tekitatud kahju hüvitamine?",
-    options: [
-      "Tsiviilseaduses sätestatud korras",
-      "Kriminaalmenetluse raames automaatselt",
-      "Politsei otsusega kohapeal",
-      "Seda ei hüvitata kunagi"
-    ],
-    correct: [0]
-  },
-  {
-    id: 8,
-    text: "Kes on väärteomenetluses kohtuväline menetleja?",
-    options: [
-      "Valla- ja linnavalitsus",
-      "Täidesaatva riigivõimu volitusega asutus",
-      "Kohus",
-      "Eraõiguslik advokaadibüroo"
-    ],
-    correct: [0, 1]
-  },
-  {
-    id: 9,
-    text: "Mis tõendab kohtuvälise menetleja ametniku pädevust?",
-    options: [
-      "Ametniku ametitõend",
-      "Kohtuvälise menetleja poolt antud tunnistus",
-      "Suuline kinnitus kolleegilt",
-      "Isiklik visiitkaart"
-    ],
-    correct: [0, 1]
-  },
-  {
-    id: 10,
-    text: "Kes on väärteomenetluses menetlusosaline?",
-    options: [
-      "Menetlusalune isik",
-      "Kaitsja",
-      "Tunnistaja",
-      "Kohus"
-    ],
-    correct: [0, 1]
-  },
-
-   {
-    id: 11,
-    text: "Kes on menetlusalune isik?",
-    options: [
-      "Füüsiline või juriidiline isik, kelle suhtes on alustatud väärteomenetlust",
-      "Isik, kes on tunnistajaks väärteole",
-      "Politseiametnik, kes menetleb väärtegu",
-      "Kohus"
-    ],
-    correct: [0]
-  },
-  {
-    id: 12,
-    text: "Kes on väärteomenetluses süüdlane?",
-    options: [
-      "Menetlusalune isik, kelle karistamise kohta on jõustunud otsus",
-      "Isik, kelle suhtes on alustatud menetlust",
-      "Tunnistaja",
-      "Kaitsja"
-    ],
-    correct: [0]
-  },
-  {
-    id: 13,
-    text: "Menetlusaluse isiku õigused väärteomenetluses",
-    options: [
-      "Õigus kaitsja abile",
-      "Õigus anda ütlusi ja esitada tõendeid",
-      "Õigus olla menetluse ajal kohtus kohal",
-      "Õigus määrata ise karistus"
-    ],
-    correct: [0, 1, 2]
-  },
-  {
-    id: 14,
-    text: "Kes võib olla kaitsja väärteomenetluses?",
-    options: [
-      "Advokaat",
-      "Menetleja loal muu õigusharidusega isik",
-      "Tunnistaja",
-      "Politseinik"
-    ],
-    correct: [0, 1]
-  },
-  {
-    id: 15,
-    text: "Mis tõendab kaitsja volitusi?",
-    options: [
-      "Volikiri",
-      "Ametitõend",
-      "Suuline kinnitus",
-      "Isikutunnistus"
-    ],
-    correct: [0]
-  },
-  {
-    id: 16,
-    text: "Nimetage väärteomenetlust välistavad asjaolud",
-    options: [
-      "Teos puuduvad väärteo tunnused",
-      "Isik on juba sama teo eest karistatud",
-      "Isik on alaealine",
-      "Väärteo aegumine"
-    ],
-    correct: [0, 1, 3]
-  },
-  {
-    id: 17,
-    text: "Millal ei alustata väärteomenetlust või see lõpetatakse?",
-    options: [
-      "Puuduvad väärteo tunnused",
-      "Isik ei nõustu rikkumisega",
-      "Isik soovib vaidlustada",
-      "Politsei ei viitsi menetleda"
-    ],
-    correct: [0]
-  },
-  {
-    id: 18,
-    text: "Millal võib lõpetada menetluse otstarbekuse kaalutlusel?",
-    options: [
-      "Süü ei ole suur ja avalik huvi puudub",
-      "Isik on alaealine ja võtab lepituse",
-      "Politsei arvates on juhtum ebamugav",
-      "Isik ei tunnista süüd"
-    ],
-    correct: [0, 1]
-  },
-  {
-    id: 19,
-    text: "Kas videosalvestis võib olla iseseisev tõend?",
-    options: [
-      "Jah, kui on tuvastatav päritolu ja seos väärteoga",
-      "Ei, see ei ole kunagi tõend",
-      "Ainult kui tunnistaja kinnitab seda",
-      "Ainult kohtuniku loal"
-    ],
-    correct: [0]
-  },
-  {
-    id: 20,
-    text: "Kohtuvälise menetleja ametnik võib olla kohtus",
-    options: [
-      "Tunnistaja tema poolt tajutud faktiliste asjaolude osas",
-      "Kaitsja",
-      "Kohtunik",
-      "Ekspert igas olukorras"
-    ],
-    correct: [0]
-  },
-
-  {
-    id: 21,
-    text: "Kas väärteomenetluses tehtud riikliku registri andmepäring tuleb dokumenteerida?",
-    options: [
-      "Jah, märge tehakse protokolli või otsusesse koos aja ja tulemusega",
-      "Ei, seda ei pea dokumenteerima",
-      "Ainult kui isik seda nõuab",
-      "Ainult kohtumenetluses"
-    ],
-    correct: [0]
-  },
-  {
-    id: 22,
-    text: "Kas väärteomenetluses saab tunnistaja olla anonüümne?",
-    options: [
-      "Ei, tunnistaja anonüümsust ei tagata",
-      "Jah, alati kui tunnistaja seda soovib",
-      "Jah, politsei otsusel",
-      "Ainult kohtus"
-    ],
-    correct: [0]
-  },
-  {
-    id: 23,
-    text: "Kas tunnistajal võib olla esindaja väärteomenetluses?",
-    options: [
-      "Ei, tunnistajal ei ole õigust esindajale",
-      "Jah, alati advokaat",
-      "Jah, kui menetleja lubab",
-      "Ainult alaealistel tunnistajatel"
-    ],
-    correct: [0]
-  },
-  {
-    id: 24,
-    text: "Millised on VTMS § 44 lg 1 alusel kinnipidamise alused?",
-    options: [
-      "Isik püüab põgeneda",
-      "Isik ei ole tuvastatav",
-      "Isik võib jätkuvalt toime panna väärtegusid",
-      "Isik on tunnistaja"
-    ],
-    correct: [0, 1, 2]
-  },
-  {
-    id: 25,
-    text: "Kui kaua võib isikut väärteo kahtlusel kinni pidada?",
-    options: [
-      "Kuni 48 tundi",
-      "Kuni 24 tundi",
-      "Kuni 72 tundi",
-      "Kuni kohtuniku otsuseni ilma piiranguta"
-    ],
-    correct: [0]
-  },
-  {
-    id: 26,
-    text: "Millised on menetlusdokumendid väärteomenetluses?",
-    options: [
-      "Väärteoprotokoll",
-      "Menetlustoimingu protokoll",
-      "Kohtuvälise menetleja otsus",
-      "Tunnistaja avaldus kui iseseisev dokument"
-    ],
-    correct: [0, 1, 2]
-  },
-  {
-    id: 27,
-    text: "Mis on kohtuvälise menetleja määrus?",
-    options: [
-      "Põhistatud menetlusotsus, mis vormistatakse eraldi dokumendina",
-      "Suuline otsus kohapeal",
-      "Tunnistaja seletus",
-      "Politsei sisekorraldus"
-    ],
-    correct: [0]
-  },
-  {
-    id: 28,
-    text: "Mis on väärteotoimik?",
-    options: [
-      "Väärteoasjas kogutud dokumentide kogum",
-      "Kohus otsus",
-      "Politsei isiklik märkmik",
-      "Tunnistaja ütluste kogum eraldi"
-    ],
-    correct: [0]
-  },
-  {
-    id: 29,
-    text: "Millal ei ole lühimenetluse kohaldamine kohustuslik?",
-    options: [
-      "Kui menetlust ei saa kohapeal lõpule viia",
-      "Kui isik soovib vaidlustada teo",
-      "Kui tegemist on kuriteoga",
-      "Kui politsei seda ei soovi"
-    ],
-    correct: [0, 2]
-  },
-  {
-    id: 30,
-    text: "Kas lühimenetluse kohaldamine on alati kohustuslik väärteomenetluse alustamisel?",
-    options: [
-      "Jah, seaduses sätestatud juhtudel",
-      "Ei, see on alati vabatahtlik",
-      "Jah, kõigis väärteoasjades",
-      "Ei, seda ei kasutata enam"
-    ],
-    correct: [0]
-  },
+const QUESTIONS = 
+[
+{
+  id: 1,
+  text: "Mis on väärtegu?",
+  options: [
+    "Väärtegu on käesolevas seadustikus või muus seaduses sätestatud süütegu, mille eest on põhikaristusena ette nähtud rahatrahv, arest või sõiduki juhtimise õiguse äravõtmine.",
+    "Väärtegu on tsiviilvaidlus kahe isiku vahel.",
+    "Väärtegu on ainult suuline hoiatus ilma karistuseta.",
+    "Väärtegu on alati kuritegu."
+  ],
+  correct: [0]
+},
+{
+  id: 2,
+  text: "Nimetage väärteomenetluse menetlus liigid.",
+  options: [
+    "kiirmenetlus",
+    "kirjalik hoiatusmenetlus",
+    "lühimenetlus",
+    "üldmenetlus",
+    "kriminaalmenetlus",
+    "täitemenetlus"
+  ],
+  correct: [0,1,2,3]
+},
+{
+  id: 3,
+  text: "Kui väärteomenetluse seadustikus ei ole sätestatud mingit menetlustoiminguläbiviimise korda, tuleb väärteomenetluses kohaldada.",
+  options: [
+    "Kriminaalmenetluse sätteid arvestades väärteomenetluse erisusi",
+    "Tsiviilkohtumenetluse seadustikku",
+    "Haldusmenetluse seadustikku",
+    "Ainult Euroopa Liidu õigust"
+  ],
+  correct: [0]
+},
+{
+  id: 4,
+  text: "Mida tähendab väärteomenetluse kohustuslikuse printsiip?",
+  options: [
+    "väärteotunnuste ilmnemisel on kohtuväline menetleja kohustatud alustama ja läbi viima väärteomenetluse, kui tegu ei ole kohtuvälise menetleja veendumuse kohaselt vähetähtis või puuduvad VTMS 29 sätestatud väärteomenetlust välistavad asjaolud",
+    "menetleja võib alati otsustada, kas menetlust alustada",
+    "menetlus algab ainult kannatanu avaldusel",
+    "menetlus viiakse läbi ainult kohtus"
+  ],
+  correct: [0]
+},
+{
+  id: 5,
+  text: "Väärtegu ei ole vähetähtis, kui VTMS 3 lg 4",
+  options: [
+    "väärteo toimepanemisega on tekitatud kahju",
+    "väärteoteates on osutatud tekitatud kahjule ja väärteo toimepannud isik ei ole kahju vabatahtlikult hüvitanud või heastanud.",
+    "isik on alaealine",
+    "tegu pandi toime esimest korda"
+  ],
+  correct: [0,1]
+},
+{
+  id: 6,
+  text: "Mida tähendab süütuse presumptsioon väärteomenetluse seadustiku mõttes?",
+  options: [
+    "Kedagi ei tohi käsitada väärteo toimepanemises süüdlasena enne, kui väärteo eest karistamise otsus on tema kohta jõustunud.",
+    "Isik peab oma süütust ise tõendama.",
+    "Kõik kahtlused tõlgendatakse menetleja kasuks.",
+    "Isik loetakse süüdi menetluse alustamisel."
+  ],
+  correct: [0]
+},
+{
+  id: 7,
+  text: "Kuidas lahendatatakse väärteo toimepanemisega tekitatud kahju hüvitamise küsimus?",
+  options: [
+    "väärteo toimepanemisega tekitatud kahju hüvitamine otsustatakse tsiviilseaduses sätestatud alustel ja korras.",
+    "kriminaalmenetluse korras",
+    "menetleja suva alusel",
+    "kahju ei hüvitata"
+  ],
+  correct: [0]
+},
+{
+  id: 8,
+  text: "Kes on väärteomenetluses kohtuväline menetleja?",
+  options: [
+    "Valla ja linnavalitsus",
+    "täidesaatva riigivõimu volitusega asutus",
+    "kohus",
+    "advokaat"
+  ],
+  correct: [0,1]
+},
+{
+  id: 9,
+  text: "Kohtuväline menetleja osaleb menetluses ametniku kaudu. Mis kinnitab kohtuvälise menetleja ametniku pädevust osaleda väärteomenetluses kohtuvälise menetleja nimel?",
+  options: [
+    "Kohtuvälise menetleja poolt antud ametnikele tema pädevust tõendav tunnistus",
+    "politseiametnike ametitõend",
+    "isikut tõendav dokument",
+    "tööleping"
+  ],
+  correct: [0,1]
+},
+{
+  id: 10,
+  text: "Kes on väärteomenetluses menetlusosaline",
+  options: [
+    "Menetlusalune isik ja tema kaitsja",
+    "tunnistaja",
+    "ekspert",
+    "kohtunik"
+  ],
+  correct: [0]
+},
 
 
-  {
-    id: 31,
-    text: "Millised on lühimenetlust välistavad asjaolud?",
-    options: [
-      "Alustatud on kirjalikku hoiatusmenetlust",
-      "Väärteos esineb mitu erinevat koosseisu",
-      "Seadus näeb ette aresti kohaldamise",
-      "Isik tunnistab süüd"
-    ],
-    correct: [0, 1, 2]
-  },
-  {
-    id: 32,
-    text: "Milline on mõjutustrahvi maksimaalne määr?",
-    options: [
-      "80 eurot",
-      "200 eurot",
-      "500 eurot",
-      "Ei ole seaduses määratud"
-    ],
-    correct: [0]
-  },
-  {
-    id: 33,
-    text: "Milline on mõjutustrahvi maksimaalne määr 14–18-aastasele isikule?",
-    options: [
-      "40 eurot",
-      "80 eurot",
-      "100 eurot",
-      "200 eurot"
-    ],
-    correct: [0]
-  },
-  {
-    id: 34,
-    text: "Millised õigused on lühimenetlusele allutatud isikul?",
-    options: [
-      "Õigus anda selgitusi",
-      "Õigus teada väärteoasja sisu",
-      "Õigus vaidlustada otsus",
-      "Õigus määrata menetluse liik"
-    ],
-    correct: [0, 1, 2]
-  },
-  {
-    id: 35,
-    text: "Kui kaua saab lühimenetluse otsust vaidlustada?",
-    options: [
-      "15 päeva jooksul otsuse kättesaamisest",
-      "7 päeva jooksul",
-      "30 päeva jooksul",
-      "Ei saa vaidlustada"
-    ],
-    correct: [0]
-  },
-  {
-    id: 36,
-    text: "Kellele esitatakse kaebus lühimenetluse otsuse peale?",
-    options: [
-      "Otsuse teinud kohtuvälisele menetlejale",
-      "Maakohtule",
-      "Politsei prefektile",
-      "Prokuratuurile"
-    ],
-    correct: [0]
-  },
-  {
-    id: 37,
-    text: "Millal võib kohaldada kiirmenetlust?",
-    options: [
-      "Isik nõustub kiirmenetlusega",
-      "Isikule on selgitatud õigusi ja kohustusi",
-      "Isik keeldub igasugusest suhtlusest",
-      "Isikule on antud võimalus ütlusi anda"
-    ],
-    correct: [0, 1, 3]
-  },
-  {
-    id: 38,
-    text: "Millal ei saa kohaldada kiirmenetlust?",
-    options: [
-      "Isik ei nõustu menetlusega",
-      "Isik on 14–18-aastane",
-      "On vaja aresti määrata",
-      "Isik on tunnistaja"
-    ],
-    correct: [0, 1, 2]
-  },
-  {
-    id: 39,
-    text: "Kui suur võib olla rahatrahv kiirmenetluses füüsilisele isikule?",
-    options: [
-      "200 trahviühikut",
-      "100 trahviühikut",
-      "500 trahviühikut",
-      "Ilma piiranguta"
-    ],
-    correct: [0]
-  },
-  {
-    id: 40,
-    text: "Mida teeb ametnik kui isik keeldub ütluste andmisest kiirmenetluses?",
-    options: [
-      "Teeb märke keeldumise kohta ja alustab üldmenetlust",
-      "Lõpetab menetluse kohe",
-      "Määrab automaatselt trahvi",
-      "Ignoreerib olukorda"
-    ],
-    correct: [0]
-  },
 
 
-   {
-    id: 41,
-    text: "Kuidas dokumenteeritakse menetlusaluse isiku ütlused kiirmenetluses?",
-    options: [
-      "Heli- ja videosalvestusega",
-      "Protokollitakse kiirmenetluse otsuse plangil",
-      "Protokollitakse ülekuulamisprotokollis",
-      "Ei dokumenteerita üldse"
-    ],
-    correct: [0, 1, 2]
-  },
-  {
-    id: 42,
-    text: "Mitmes eksemplaris koostatakse kiirmenetluse otsus?",
-    options: [
-      "Kahes eksemplaris",
-      "Ühes eksemplaris",
-      "Kolmes eksemplaris",
-      "Sõltub menetlejast"
-    ],
-    correct: [0]
-  },
-  {
-    id: 43,
-    text: "Kellel on õigus esitada kaebus kiirmenetluse otsuse peale?",
-    options: [
-      "Menetlusalusel isikul",
-      "Menetlusaluse isiku kaitsjal",
-      "Tunnistajal",
-      "Politseinikul"
-    ],
-    correct: [0, 1]
-  },
-  {
-    id: 44,
-    text: "Kellele esitatakse kaebus kiirmenetluse otsuse peale?",
-    options: [
-      "Maakohtule",
-      "Politsei prefektile",
-      "Kohtuvälisele menetlejale",
-      "Prokuratuurile"
-    ],
-    correct: [0]
-  },
-  {
-    id: 45,
-    text: "Kui kaua on aega esitada kaebus kiirmenetluse otsuse peale?",
-    options: [
-      "15 päeva jooksul otsuse kättesaamisest",
-      "7 päeva jooksul",
-      "30 päeva jooksul",
-      "Ei saa kaevata"
-    ],
-    correct: [0]
-  },
-  {
-    id: 46,
-    text: "Millega alustatakse väärteomenetlust?",
-    options: [
-      "Esimese menetlustoiminguga",
-      "Väärteoteatega",
-      "Kohtuniku otsusega",
-      "Kaebuse esitamisega"
-    ],
-    correct: [0]
-  },
-  {
-    id: 47,
-    text: "Millal tutvustatakse menetlusalusele isikule tema õigused ja kohustused?",
-    options: [
-      "Enne esimese menetlustoimingu tegemist",
-      "Pärast otsuse tegemist",
-      "Kohtus alles",
-      "Ainult kirjalikult hiljem"
-    ],
-    correct: [0]
-  },
-  {
-    id: 48,
-    text: "Mis on väärteoteade?",
-    options: [
-      "Teade sündmusest, mis võib sisaldada väärteotunnuseid",
-      "Kohtulahend",
-      "Karistusotsus",
-      "Politsei sisekorraldus"
-    ],
-    correct: [0]
-  },
-  {
-    id: 49,
-    text: "Kui kiiresti peab menetleja otsustama väärteoteate alusel menetluse alustamise?",
-    options: [
-      "15 päeva jooksul",
-      "5 päeva jooksul",
-      "30 päeva jooksul",
-      "Ei ole tähtaega"
-    ],
-    correct: [0]
-  },
-  {
-    id: 50,
-    text: "Kuidas dokumenteeritakse ütlused üldmenetluses?",
-    options: [
-      "Ülekuulamisprotokollis",
-      "Väärteoprotokollis",
-      "Suuliselt ilma protokollita",
-      "Helisalvestuseta alati"
-    ],
-    correct: [0, 1]
-  },
+
+{
+  id: 11,
+  text: "Kes on menetlusalune isik?",
+  options: [
+    "Füüsiline või juriidiline isik, kelle suhtes on alustatud väärteomenetlust",
+    "Ainult füüsiline isik",
+    "Tunnistaja väärteomenetluses",
+    "Kohtunik"
+  ],
+  correct: [0]
+},
+{
+  id: 12,
+  text: "Kes on väärteomenetluses süüdlane?",
+  options: [
+    "Menetlusalune isik , kelle karistamise kohta on jõustunud kohtuvälise menetleja otsus või kohtuotsus.",
+    "Iga menetlusalune isik automaatselt",
+    "Isik, kelle suhtes on esitatud kahtlus",
+    "Tunnistaja"
+  ],
+  correct: [0]
+},
+{
+  id: 13,
+  text: "Menetlusaluse isiku õigused.",
+  options: [
+    "õigus teada, millist väärteoasja tema suhtes menetletakse;",
+    "õigus kaitsja abile ning kaitsjaga ühendust võtta alates isiku kinnipidamisest või muu esimese menetlustoimingu tegemist;",
+    "õigus olla kohtus oma väärteoasja arutamise juures;",
+    "õigus anda ütlusi, esitada tõendeid ja taotlusi;",
+    "õigus teada menetlustoimingu eesmärki;",
+    "õigus tutvuda menetlustoimingu protokolliga, menetlustoimingu heli- ja videosalvestisega ning teha nende kohta avaldusi;",
+    "õigus vaidlustada kohtuvälise menetleja või kohtu menetlustoiming või lahend seadustikus sätestatud korras.",
+    "õigus keelduda kõigist menetlustoimingutest ilma tagajärgedeta",
+    "õigus määrata ise karistus",
+    "õigus lõpetada menetlus omal algatusel"
+  ],
+  correct: [0,1,2,3,4,5,6]
+},
+{
+  id: 14,
+  text: "Kes võib olla väärteomenetluses menetlusaluse isiku kaitsjaks?",
+  options: [
+    "Advokaat",
+    "Menetleja loal muu isik, kes on omandanud õiguse õppesuunal vähemalt riiklikult tunnustatud magistrikraadi, Selle vastava kvalifikatsiooni haridusseaduse tähenduses või selle vastava välisriigi kvalifikatsiooni.",
+    "Iga sõber või tuttav",
+    "Tunnistaja"
+  ],
+  correct: [0,1]
+},
+{
+  id: 15,
+  text: "Mis tõendab väärteomenetluses menetlusaluse isiku kaitsja volitusi?",
+  options: [
+    "Volikiri",
+    "Suuline kokkulepe",
+    "Isikut tõendav dokument",
+    "Kohtu luba"
+  ],
+  correct: [0]
+},
+{
+  id: 16,
+  text: "Nimetage väärteomenetlust välistavad asjaolud.",
+  options: [
+    "teos puuduvad väärteo tunnused;",
+    "isikut on juba karistatud sama teo toimepanemise eest;",
+    "isiku suhtes on sama teo kohta tehtud väärteomenetluse lõpetamise lahend;",
+    "teos on kuriteo tunnused;",
+    "väärteo aegumistähtaeg on möödunud;",
+    "seadus, mis nägi ette karistuse väärteo eest, on kehtetuks tunnistatud;",
+    "isik, kelle suhtes alustatakse või on alustatud väärteomenetlust, on surnud või juriidiline isik on lõppenud",
+    "kõik ülalpool nimetatud asjaolud",
+    "isik tunnistab teo üles",
+    "menetlejal puudub aeg menetluseks"
+  ],
+  correct: [0,1,2,3,4,5,6,7]
+},
+{
+  id: 17,
+  text: "Väärteomenetlust ei alustata ja alustatud menetlus tuleb lõpetada kui:",
+  options: [
+    "isik, kelle suhtes alustatakse või on alustatud väärteomenetlust, ei nõustu rikkumise toimepanemisega",
+    "isik, kelle suhtes alustatakse või on alustatud väärteomenetlust, soovib vaidlustada rikkumise toimepanemise",
+    "isik tunnistab teo üles",
+    "menetleja peab tegu tõsiseks"
+  ],
+  correct: [0,1]
+},
+{
+  id: 18,
+  text: "Millistel asjaoludel võib menetleja  lõpetada väärteomenetluse otstarbekuse kaalutlusel?",
+  options: [
+    "Menetlusalune isik on võtnud kohustuse osaleda sotsiaalprogrammis.",
+    "menetlusaluse isiku süü ei ole suur ja väärteo menetluse jätkamiseks puudub avalik menetlushuvi.",
+    "alaealine menetlusalune isik on võtnud kohustuse kasutada lepitusteenust või võtnud muu asjakohase kohustuse.",
+    "isik eitab süüd",
+    "menetleja soovib menetlust lõpetada ilma põhjuseta"
+  ],
+  correct: [0,1,2]
+},
+{
+  id: 19,
+  text: "Kui riikliku järelvalve käigus on tehtud video, kas selle salvestis võib olla väärteomenetluses iseseisvaks tõendiks?",
+  options: [
+    "Võib olla väärteomenetluses iseseisvaks tõendiks kui salvestiselt nähtub, millal, millistel asjaoludel ja kelle poolt on salvestis loodud,  Salvestise seos väärteo asjaga ning selle lahendamiseks olulised asjaolud.",
+    "Ei või kunagi olla tõend",
+    "On alati tõend sõltumata sisust",
+    "On tõend ainult kohtu loal"
+  ],
+  correct: [0]
+},
+{
+  id: 20,
+  text: "Kellena võib kohtu- või kaebemenetluses osaleda kohtuvälise menetleja ametnik, kes on vahetult tajunud väärteo tehiolusid ja kirjeldanud neid väärteoprotokollis või kiirmenetluse otsuses?",
+  options: [
+    "tunnistaja tema poolt tajutud faktilise asjaolude kohta.",
+    "süüdistatav",
+    "kohtunik",
+    "kaitsja"
+  ],
+  correct: [0]
+},
 
 
-  {
-    id: 51,
-    text: "Kas väärteoprotokoll on käsitatav iseseisva tõendina?",
-    options: [
-      "Ei, välja arvatud juhul kui selles sisalduvad ütlused",
-      "Jah, alati täielikult tõend",
-      "Ei, mitte kunagi tõend",
-      "Jah, kui kohus nii otsustab"
-    ],
-    correct: [0]
-  },
-  {
-    id: 52,
-    text: "Mis on üldmenetluse tunnuseks?",
-    options: [
-      "Väärteoprotokoll",
-      "Kiirmenetluse otsus",
-      "Kirjalik hoiatus",
-      "Automaatne trahv ilma menetluseta"
-    ],
-    correct: [0]
-  },
-  {
-    id: 53,
-    text: "Mitu väärteoprotokolli võib koostada ühe isiku kohta?",
-    options: [
-      "Ühe või vajadusel mitu",
-      "Ainult üks alati",
-      "Ainult kolm",
-      "Ei tohi rohkem kui üks väärtegu menetleda"
-    ],
-    correct: [0]
-  },
-  {
-    id: 54,
-    text: "Kui kaua on aega esitada vastulause väärteoprotokollile?",
-    options: [
-      "15 päeva jooksul kättesaamisest",
-      "7 päeva jooksul",
-      "30 päeva jooksul",
-      "Ei ole võimalik esitada vastulauset"
-    ],
-    correct: [0]
-  },
-  {
-    id: 55,
-    text: "Kellele võib esitada vastulause väärteoasjas?",
-    options: [
-      "Kohtuvälisele menetlejale",
-      "Kohtule",
-      "Prokuratuurile",
-      "Politsei patrullile suuliselt"
-    ],
-    correct: [0]
-  },
-  {
-    id: 56,
-    text: "Kellel on õigus esitada vastulause?",
-    options: [
-      "Menetlusalusel isikul",
-      "Kaitsjal",
-      "Tunnistajal",
-      "Kohtunikul"
-    ],
-    correct: [0, 1]
-  },
-  {
-    id: 57,
-    text: "Kas kiirmenetluse otsuse peale saab esitada vastulause kohtuvälisele menetlejale?",
-    options: [
-      "Ei, sellisel juhul vastulause võimalust ei ole",
-      "Jah, alati 15 päeva jooksul",
-      "Jah, ainult suuliselt",
-      "Ainult kui menetleja lubab"
-    ],
-    correct: [0]
-  },
-  {
-    id: 58,
-    text: "Mida teha kui isik keeldub väärteoprotokolli koopia kättesaamisest allkirja vastu?",
-    options: [
-      "Tehakse protokollile märge keeldumise kohta",
-      "Menetlus lõpetatakse kohe",
-      "Määratakse automaatselt karistus",
-      "Isikut ei tohi enam menetleda"
-    ],
-    correct: [0]
-  },
-  {
-    id: 59,
-    text: "Kui kiiresti peab üldmenetluses olema lahend tehtud?",
-    options: [
-      "30 päeva jooksul väärteoprotokolli kättesaamisest",
-      "15 päeva jooksul",
-      "7 päeva jooksul",
-      "Ei ole tähtaega"
-    ],
-    correct: [0]
-  },
-  {
-    id: 60,
-    text: "Nimetage kohtuvälise menetleja lahendid üldmenetluses",
-    options: [
-      "Väärteomenetluse lõpetamise määrus",
-      "Kiirmenetluse otsus",
-      "Haldusakt",
-      "Tunnistaja protokoll"
-    ],
-    correct: [0]
-  }
-];
+
+
+
+{
+  id: 21,
+  text: "Väärteo toimepanemine on tõendatud riikliku registry andemtega millel on õiguslik tähendus. Kas kohtuvälise menetleja ametnik peab tegema andmekogust päringu tegemise kohta vastava märke.",
+  options: [
+    "märge andmekogust päringu tegemise kohta tehakse väärteoprotokolli või kiirmenetluse otsusele ning märkest peab nähtuma päringu tegemise aeg ja päringu tulemus.",
+    "märget ei ole vaja teha",
+    "märge tehakse ainult kohtule",
+    "märge tehakse suuliselt"
+  ],
+  correct: [0]
+},
+{
+  id: 22,
+  text: "Kas väärteomenetluses saab muuta tunnistaja anonüümseks?",
+  options: [
+    "Tunnistaja anonüümsust väärteomenetluses ei tagata.",
+    "Tunnistaja saab alati anonüümseks muuta",
+    "Anonüümsus sõltub tunnistaja soovist",
+    "Anonüümsus kehtib ainult kohtus"
+  ],
+  correct: [0]
+},
+{
+  id: 23,
+  text: "Kas võib olla väärteomenetluses ülekuulamisel tunnistaja esindaja?",
+  options: [
+    "Väärteomenetluses ei ole tunnistajal õigust omada esindajat.",
+    "Tunnistajal on alati õigus esindajale",
+    "Esindaja on kohustuslik",
+    "Esindaja võib olla ainult advokaat"
+  ],
+  correct: [0]
+},
+{
+  id: 24,
+  text: "Nimetage väärteo toime pannud isiku VTMS 44 lõikes 1 sätestatud kinnipidamise alused.",
+  options: [
+    "Isik püüab põgeneda",
+    "ei ole tuvastatud tema isikut",
+    "ta võib jätkuvalt toime panna väärtegusid",
+    "ta võib väärteomenetlust takistada või sellest kõrvale hoiduda",
+    "isik tunnistab teo üles",
+    "isik teeb koostööd menetlejaga"
+  ],
+  correct: [0,1,2,3]
+},
+{
+  id: 25,
+  text: "Kui kaua võib isikut kelle kohta on põhjendatult alust arvata, et ta on toime pannud väärteo, kinni pidada?",
+  options: [
+    "kuni 48 tundi",
+    "kuni 24 tundi",
+    "kuni 72 tundi",
+    "piiramatu aeg"
+  ],
+  correct: [0]
+},
+{
+  id: 26,
+  text: "Nimetage menetlusdokumendid kohtuvälises menetluses",
+  options: [
+    "väärteoprotokoll",
+    "menetlustoimingu protokoll",
+    "kohtuvälise menetleja määrus",
+    "kohtuvälise menetleja otsus",
+    "kõik ülalpool loetletud dokumendid",
+    "kohtuotsus",
+    "süüdistusakt"
+  ],
+  correct: [0,1,2,3,4]
+},
+{
+  id: 27,
+  text: "Mis on kohtuvälise menetluse määrus?",
+  options: [
+    "Kohtuvälise menetleja või kohtu põhistatud menetlusotsus, mis vormistatakse eraldi menetlusdokumendina ja pannakse väärteotoimikusse.",
+    "Suuline otsus ilma dokumenteerimiseta",
+    "Ainult kohtu otsus",
+    "Menetlusaluse isiku avaldus"
+  ],
+  correct: [0]
+},
+{
+  id: 28,
+  text: "Mis on väärteotoimik?",
+  options: [
+    "Väärteo asjas kogutud dokumentide kogum.",
+    "Ainult väärteoprotokoll",
+    "Kohtu toimik",
+    "Politsei siseinfo"
+  ],
+  correct: [0]
+},
+{
+  id: 29,
+  text: "Millistel asjaoludel ei ole lühimenetluse kohaldamine kohustuslik.",
+  options: [
+    "Kui esinevad asjaolud, mis ei võimalda lühimenetlust lõpule via kohapeal.",
+    "kui lühimenetluse alllutatud isik soovib vaidlustada väärteotunnustega teo toimepanemise",
+    "kui isik tunnistab teo üles",
+    "kui menetlejal on kiire"
+  ],
+  correct: [0,1]
+},
+{
+  id: 30,
+  text: "Kas väärteomenetluse alustamisel on lühimenetluse kohaldamine kohustuslik?",
+  options: [
+    "on kohustuslik seaduses sätestatud juhtudel.",
+    "on alati kohustuslik",
+    "ei ole kunagi kohustuslik",
+    "sõltub menetleja tujust"
+  ],
+  correct: [0]
+},
+
+
+
+
+{
+  id: 31,
+  text: "Millised on lühimenetlust välistavad asjaolud?",
+  options: [
+    "Lühimenetluse aluseks oleva väärteo tunnustega teo kohta alustatkse kirjalikku hoiatusmenetlust.",
+    "Lühimenetluse aluseks olevas väärteo tunnustega teos esinevad eri väärteokoosseidude tunnused ja nendest vähemalt ühe kohta alustatakse üld-või kiirmenetlust.",
+    "Seadus näeb väärteo eest põhikaristusena ette eriõiguse äravõtmise, aresti või lisakaristuse kohaldamise.",
+    "isik tunnistab teo üles",
+    "menetlusalune isik teeb koostööd"
+  ],
+  correct: [0,1,2]
+},
+{
+  id: 32,
+  text: "Milline on mõjutustrahvi maksimaalmäär?",
+  options: [
+    "80 eurot",
+    "40 eurot",
+    "200 eurot",
+    "piiramatu"
+  ],
+  correct: [0]
+},
+{
+  id: 33,
+  text: "Milline on 14- kuni 18 a. isikule mõjutustrahvi määramise korral mõjutustrahvi maksimaalmäär?",
+  options: [
+    "40 eurot",
+    "80 eurot",
+    "20 eurot",
+    "100 eurot"
+  ],
+  correct: [0]
+},
+{
+  id: 34,
+  text: "Millised õigused on lühimenetlusele allutatud isikul?",
+  options: [
+    "anda väärteo asjaolude kohta selgitusi",
+    "teada millist väärteo asja tema suhtes menetletakse",
+    "tutvuda riikliku järelevalve käigus tehtud salvestustega",
+    "vaidlustada lühimenetluse otsus väärteomenetluse seadustikus sätestatud koras.",
+    "määrata ise karistus",
+    "lõpetada menetlus omal soovil"
+  ],
+  correct: [0,1,2,3]
+},
+{
+  id: 35,
+  text: "Millise aja jooksul on lühimenetlusele allutatud isikul õigus vaidlustada lühimenetluse otsuse?",
+  options: [
+    "15 päeva jooksul lühimenetluse otsuse kättesaamisest arvates.",
+    "7 päeva jooksul",
+    "30 päeva jooksul",
+    "3 päeva jooksul"
+  ],
+  correct: [0]
+},
+{
+  id: 36,
+  text: "Kellele esitatakse kaebus lühimenetluse otsuse peale?",
+  options: [
+    "lühimenetluse otsuse koostanud kohtuvälisele menetlejale.",
+    "maakohtule",
+    "riigikohtule",
+    "politseile üldiselt"
+  ],
+  correct: [0]
+},
+{
+  id: 37,
+  text: "Mis tingimustel võib kohtuväline menetleja väärteoasja menetlemisel kohaldada kiirmenetlust?",
+  options: [
+    "Menetlusalune isik nõustub kiirmenetlusega",
+    "menetlusalusele isikule on selgitatud, kiirenetluses väärteoprotokolli ei koostata",
+    "Menetlusalusele isikule on teatatud tema õigused ja kohustused.",
+    "menetlusalusele isikule on võimaldattud anda väärteo toimepanemise kohta ütlusi.",
+    "menetlusalune isik vaikib",
+    "menetleja otsustab üksinda"
+  ],
+  correct: [0,1,2,3]
+},
+{
+  id: 38,
+  text: "Millistel asjaoludel ei saa kohaldada kiirmenetlust ja tuleb alustada üldmenetlust?",
+  options: [
+    "Menetlusalune isik ei nõustu kiirmenetlusega",
+    "menetlusalune isik on 14-18 aastane",
+    "menetlusalune isik on psüühikahäirega",
+    "on vaja otsustada konfiskeerimine",
+    "On vaja otsustada põhikaristusena aresti kohaldamine",
+    "on vaja otsustada põhikaristusena sõiduki juhtimise õiguse äravõtmine",
+    "on vaja otsustada lisakaristuse kohaldamine",
+    "menetlusalune isik tunnistab teo üles"
+  ],
+  correct: [0,1,2,3,4,5,6]
+},
+{
+  id: 39,
+  text: "Kui suure rahatrahvi võib kiirmenetluse otsuses määrata füüsilisele isikule?",
+  options: [
+    "200 trahviühikut",
+    "100 trahviühikut",
+    "80 eurot",
+    "piiramatu"
+  ],
+  correct: [0]
+},
+{
+  id: 40,
+  text: "Kohtuvälise menetleja ametnik otsustas kohaldada kiirmenetlust. Väärteo toimepanemise asjaolud olid selged. Menetlusaluse isik nõustus kiirmenetlusega, kuid keeldub ütluste andmisest. Mida teha kohtuvälise menetleja ametnikul, kui menetlusosaline keeldub ütluste andmisest?",
+  options: [
+    "Menetleja teeb kiirmenetluse otsuse või ülekuulamis protokolli plangile keeldumise kohta märke ning alustab üldmenetlust.",
+    "Menetlus lõpetatakse kohe",
+    "Isik vabastatakse vastutusest",
+    "Menetleja ignoreerib keeldumist"
+  ],
+  correct: [0]
+},
+
+
+
+{
+  id: 41,
+  text: "Kuidas dokumenteeritakse menetlusaluse isiku ütlused väärteo toimepanemise kohta kiirmenetluses?",
+  options: [
+    "Heli ja videosalvestatakse",
+    "protokollitakse kiirmenetluse otsuse plangil",
+    "protokollitakse menetlusaluse isiku ülekuulamisprotokollis.",
+    "ei dokumenteerita üldse",
+    "ainult suuliselt"
+  ],
+  correct: [0,1,2]
+},
+{
+  id: 42,
+  text: "Mitmes eksemplaris koostatakse kiirmenetluse otsus?",
+  options: [
+    "kahes eksemplaris, millest esimene antakse kohe pärast otsuse allakirjutamist menetlusalusele isikule allkirja vastu",
+    "ühes eksemplaris",
+    "kolmes eksemplaris",
+    "ei koostata kirjalikult"
+  ],
+  correct: [0]
+},
+{
+  id: 43,
+  text: "Kellel on õigus esitada kaebus kohtuvälise menetleja kiirmenetluses tehtud otsuse peale?",
+  options: [
+    "menetlusalusel isikul",
+    "menetlusaluse isiku kaitsjal",
+    "tunnistajal",
+    "eksperdil"
+  ],
+  correct: [0,1]
+},
+{
+  id: 44,
+  text: "Kellele esitatakse kaebus kiirmenetluse otsuse peale?",
+  options: [
+    "maakohtule",
+    "kohtuvälisele menetlejale",
+    "riigikohtule",
+    "politseijaoskonnale"
+  ],
+  correct: [0]
+},
+{
+  id: 45,
+  text: "Millise aja jooksul on õigus esitada maakotule kaebuse kiirmenetluse otsuse peale?",
+  options: [
+    "15 päeva jooksul kiirmenetluse otsuse kättesaamisest",
+    "7 päeva jooksul",
+    "30 päeva jooksul",
+    "3 päeva jooksul"
+  ],
+  correct: [0]
+},
+{
+  id: 46,
+  text: "Millise menetlustoiminguga alustatakse väärteomenetlust?",
+  options: [
+    "esimese menetlustoiminguga",
+    "väärteoprotokolli koostamisega",
+    "kohtuotsusega",
+    "trahvi määramisega"
+  ],
+  correct: [0]
+},
+{
+  id: 47,
+  text: "Millal tutvustatakse menetlusalusele isikule tema õigused ja kohustused vastavalt VTMS-le?",
+  options: [
+    "enne menetlusaluse isikuga esimese menetlustoimingu tegemist",
+    "pärast menetluse lõpetamist",
+    "ainult kohtus",
+    "pärast karistuse määramist"
+  ],
+  correct: [0]
+},
+{
+  id: 48,
+  text: "Mida tähendab väärteoteade?",
+  options: [
+    "teade, milles kirjeldatakse sündmust, fakti või tegevust, milles võivad esineda väärteotunnused",
+    "kohtuotsus väärteoasjas",
+    "trahvi määramise otsus",
+    "tunnistaja ütlus"
+  ],
+  correct: [0]
+},
+{
+  id: 49,
+  text: "Millise aja jooksul on kohtuväline menetleja kohustatud alustama väärteomenetlust või otsustama väärteomenetluse alustamata jätmise, kui väärteo toimepanemise kohta on esitatud väärteoteade?",
+  options: [
+    "15 päeva jooksul väärteoteate kättesaamisest arvates",
+    "7 päeva jooksul",
+    "30 päeva jooksul",
+    "kohe samal päeval"
+  ],
+  correct: [0]
+},
+{
+  id: 50,
+  text: "Kuidas dokumenteeritakse menetlusaluse isiku ütlused väärteo toimepanemise kohta üldmenetluses?",
+  options: [
+    "protokollitakse menetlusaluse isiku ülekuulamisprotokolli plangil",
+    "protokollitakse väärteoprotokollis",
+    "ainult suuliselt",
+    "ei dokumenteerita"
+  ],
+  correct: [0,1]
+},
+
+
+
+{
+  id: 51,
+  text: "Kas väärteoprotokoll on käsitatav tõendina?",
+  options: [
+    "ei ole tõend, v.a juhul, kui protokollis sisalduvad menetlusaluse isiku või tunnistaja ütlused",
+    "on alati iseseisev tõend",
+    "on tõend ainult kohtus",
+    "on tõend ainult siis, kui menetleja kinnitab selle eraldi"
+  ],
+  correct: [0]
+},
+{
+  id: 52,
+  text: "Mis on väärteomenetluses üldmenetluse tunnuseks?",
+  options: [
+    "väärteoprotokoll",
+    "kohtumäärus",
+    "tunnistaja ütlus",
+    "menetlusaluse isiku ülestunnistus"
+  ],
+  correct: [0]
+},
+{
+  id: 53,
+  text: "Mitu väärteoprotokolli võib koostada, kui isik on toime pannud mitu väärtegu?",
+  options: [
+    "võib koostada ühe protokolli",
+    "vajaduse korral võib koostada mitu protokolli",
+    "alati tuleb koostada eraldi protokoll iga teo kohta",
+    "protokolli ei koostata sellisel juhul üldse"
+  ],
+  correct: [0,1]
+},
+{
+  id: 54,
+  text: "Millise tähtaja jooksul on menetlusalusel isikul õigus esitada vastuslause?",
+  options: [
+    "15 päeva jooksul, alates väärteoprotokolli koopia kättesaamisest",
+    "7 päeva jooksul",
+    "30 päeva jooksul",
+    "3 päeva jooksul"
+  ],
+  correct: [0]
+},
+{
+  id: 55,
+  text: "Kellele võib menetlusalune isik esitada vastulause?",
+  options: [
+    "kohtuvälisele menetlejale",
+    "maakohtule",
+    "politseipeadirektorile",
+    "prokuratuurile"
+  ],
+  correct: [0]
+},
+{
+  id: 56,
+  text: "Kellel on õigus esitada vastulause?",
+  options: [
+    "menetlusaluse isiku kaitsjal",
+    "menetlusalusel isikul",
+    "tunnistajal",
+    "suvalisel kolmandal isikul"
+  ],
+  correct: [0,1]
+},
+{
+  id: 57,
+  text: "Menetlusalune isik sai allkirja vastu kiirmenetluse otsuse, millega teda karistati rahatrahviga 25 trahviühiku ulatuses. Millise aja jooksul võib menetlusalune isik esitada kohtuvälisele menetlejale antud väärteoasjas vastulause?",
+  options: [
+    "antud juhul seadus ei näe ette vastulause esitamise võimalust",
+    "15 päeva jooksul",
+    "7 päeva jooksul",
+    "30 päeva jooksul"
+  ],
+  correct: [0]
+},
+{
+  id: 58,
+  text: "Mida teha kohtuvälisel menetlejal kui menetlusosaline keeldub väärteprotokolli koopia kättesaamise kohta allkirja andmist?",
+  options: [
+    "menetleja teeb väärteoprotokollile selle kohta märkuse, märkides keeldumise kuupäeva ning oma allkirja ja ametinimetuse",
+    "menetlus lõpetatakse automaatselt",
+    "protokoll tühistatakse",
+    "isikut karistatakse koheselt"
+  ],
+  correct: [0]
+},
+{
+  id: 59,
+  text: "Millise aja jooksul peab kohtuvälise menetleja väärteoasja üldmenetluse lahend olema tehtud ja menetlusalusele isikule kohtuvälise menetleja juures kättesaadav?",
+  options: [
+    "30 päeva möödumisel väärteoprotokolli koopia menetlusalusele isikule kätteandmisest",
+    "15 päeva jooksul",
+    "7 päeva jooksul",
+    "60 päeva jooksul"
+  ],
+  correct: [0]
+},
+{
+  id: 60,
+  text: "Nimetage kohtuvälise menetleja lahendid üldmenetluses?",
+  options: [
+    "kiirmenetluse otsus rahatrahvi ja lisakaristusena sõiduki juhtimise õiguse äravõtmise määramise kohta",
+    "väärteomenetluse lõpetamise määrus",
+    "kriminaalmenetluse alustamise määrus",
+    "kohtumäärus"
+  ],
+  correct: [0,1]
+}
+
+
+
+
+]
 
 
 // Soovi korral lisa siia kiiresti 70 tk: kopeeri objekt ja muuda text/options/correct.
