@@ -200,8 +200,6 @@ const QUESTIONS =
     "seadus, mis nägi ette karistuse väärteo eest, on kehtetuks tunnistatud;",
     "isik, kelle suhtes alustatakse või on alustatud väärteomenetlust, on surnud või juriidiline isik on lõppenud",
     "kõik ülalpool nimetatud asjaolud",
-    "isik tunnistab teo üles",
-    "menetlejal puudub aeg menetluseks"
   ],
   correct: [0,1,2,3,4,5,6,7]
 },
@@ -321,8 +319,6 @@ const QUESTIONS =
     "kohtuvälise menetleja määrus",
     "kohtuvälise menetleja otsus",
     "kõik ülalpool loetletud dokumendid",
-    "kohtuotsus",
-    "süüdistusakt"
   ],
   correct: [0,1,2,3,4]
 },
